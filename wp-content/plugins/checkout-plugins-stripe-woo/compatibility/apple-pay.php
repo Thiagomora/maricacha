@@ -132,9 +132,6 @@ class Apple_Pay {
 				return;
 			}
 
-			// Required for apple pay integration.
-			flush_rewrite_rules(); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.flush_rewrite_rules_flush_rewrite_rules
-
 			$response = $this->move_file_to_apple_dir();
 			if ( ! $response['success'] ) {
 				$this->failure_message = $response['message'];
